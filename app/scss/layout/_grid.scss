@@ -1,6 +1,6 @@
 .container {
-   padding-right: 10px;
-   padding-left: 10px;
+   padding-right: 15px;
+   padding-left: 15px;
    margin-right: auto;
    margin-left: auto;
    position: relative;
@@ -11,11 +11,20 @@
    }
 
    @media screen and (min-width: $desktop) {
-      width: 1080px;
+      width: 1180px;
    }
 }
 
 .wrapper {
    width: 100%;
    overflow: hidden;
+}
+
+@for $i from 1 through 12 {
+    .layout__col--#{$i} {
+        width: 10%*$i;
+        float: left;
+        padding-left:15px;
+        padding-right:15px;
+    }
 }

@@ -1,8 +1,22 @@
 @import "helpers/variable";
 @import "helpers/mixin";
 @import "helpers/reset";
+@import "layout/grid";
+@import "layout/header";
 
+.travel {
+   padding:50px 0;
+   font-size: 26px;
+   line-height: 46px;
+   font-weight: 300;
+   background:url(../picture/travel.jpg) no-repeat center bottom;
+   background-size:contain;
+   height: 1600px;
 
+   .layout__col--5:first-child {
+      font-weight: 400;
+   }
+}
 
 
 
