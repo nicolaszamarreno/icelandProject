@@ -11,20 +11,27 @@
    }
 
    @media screen and (min-width: $desktop) {
-      width: 1180px;
+      width: 1170px;
    }
 }
 
-.wrapper {
-   width: 100%;
-   overflow: hidden;
+.row {
+    display:flex;
 }
 
-@for $i from 1 through 12 {
+div[class^=layout__col] {
+    padding:0 15px;
+}
+
+@for $i from 1 through 12{
     .layout__col--#{$i} {
-        width: 10%*$i;
-        float: left;
-        padding-left:15px;
-        padding-right:15px;
+        position: relative;
+        width: percentage($i/12);
+    }
+}
+
+@for $i from 1 through 12{
+    .layout__colPush--#{$i} {
+        left: percentage($i/12);
     }
 }
