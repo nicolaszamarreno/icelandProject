@@ -1,5 +1,2 @@
 node_modules
-iceland__workSans--tablette.psd
-iceland__workSans--mobile.psd
-iceland__workSans--desktop.psd
-dist
+!.psd

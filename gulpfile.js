@@ -79,7 +79,7 @@ gulp.task('inject', function () {
 
 // Compress JS
 gulp.task('compress-js', function() {
-  return gulp.src('dist/js/**/*.js')
+  return gulp.src('app/js/**/*.js')
     .pipe(uglify())
     .pipe(gulp.dest('dist/js/'));
 });

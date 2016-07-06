@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".navbar__menu li").click(function(){var a=$(this).data("scroll");$("html, body").animate({scrollTop:$("."+a).offset().top},750),"headband"==a?$(".navbar__menu li").css("color","#FFFFFF"):$(".navbar__menu li").css("color","#000000")})});
