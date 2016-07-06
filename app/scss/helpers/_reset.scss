@@ -26,7 +26,7 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1;
   font-family: $font-regular;
-  font-weight: 200;
+  font-weight: $font__weight-regular;
   background-color:$color-background;
 }
 ol, ul {

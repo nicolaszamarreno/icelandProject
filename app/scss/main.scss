@@ -8,7 +8,6 @@ body {
 	overflow: hidden;
 }
 .text-regular {
-	font-weight: 200;
 	line-height: 30px;
 	font-size: 20px;
 	letter-spacing: 0;
@@ -96,8 +95,22 @@ body {
 
 .headband {
 	@extend .text-regular;
-	background-color:#0a1613;
 	color:white;
+	position: relative;
+	
+	&__band {
+		background-color:#0a1613;
+		position: absolute;
+		top: 0;
+		left:0;
+		width: 100%;
+		height: 100%;
+		animation:bandMove 2s;
+
+		@media screen and (min-width: $tablet) {
+			height: 85%;
+		}
+	}
 
 	&__baseline {
 		padding:30px 0;
@@ -313,6 +326,11 @@ body {
 			font-size: 35px;
 		}
 	}
+}
+
+@keyframes bandMove {
+	from {width: 0;}
+	to {width: 100%;}
 }
 
 
