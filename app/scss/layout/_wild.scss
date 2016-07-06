@@ -1,0 +1,49 @@
+.wild {
+   background:url(../picture/wild.jpg) no-repeat center fixed;
+   background-size: cover;
+   letter-spacing: 2.5px;
+   height: 400px;
+   display: flex;
+   flex-direction:column;
+   justify-content:center;
+   align-items:center;
+   align-content:center;
+
+   @media screen and (min-width: $tablet) {
+      height: 400px;
+   }
+
+   @media screen and (min-width: $desktop-large) {
+      height: 600px;
+   }
+
+   &__quote {
+      font-weight: 500;
+      font-size: 39px;
+
+      @media screen and (min-width: $tablet) {
+         font-size: 45px;
+      }
+
+      @media screen and (min-width: $desktop-large) {
+         font-size: 60px;
+      }
+   }
+
+   &__author {
+      font-weight: 300;
+      font-size: 26px;
+      margin-top:10px;
+      line-height: 32px;
+
+      @media screen and (min-width: $tablet) {
+         font-size: 30px;
+         margin-top:20px;
+      }
+
+      @media screen and (min-width: $desktop-large) {
+         font-size: 46px;
+         margin-top:20px;
+      }
+   }
+}

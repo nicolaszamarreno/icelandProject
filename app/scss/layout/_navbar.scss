@@ -1,0 +1,21 @@
+.navbar {
+   display: none;
+
+   @media screen and (min-width: $desktop-large) {
+      display: block;
+      position: fixed;
+      transform:rotate(90deg);
+      top:50%;
+      transform-origin:center center;
+      right: -150px;
+      z-index: 200;
+   }
+
+   &__menu {
+      li {
+         float: left;
+         padding:0 10px;
+         cursor: pointer;
+      }
+   }
+}

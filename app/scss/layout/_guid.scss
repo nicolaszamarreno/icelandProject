@@ -1,0 +1,12 @@
+.guid {
+   padding:50px 0;
+   @extend .text-regular;
+
+   &__text {
+
+   }
+
+   strong {
+      font-weight: 400;
+   }
+}

@@ -1,0 +1,17 @@
+.text-regular {
+   line-height: 30px;
+   font-size: 20px;
+   letter-spacing: 0;
+
+   @media screen and (min-width: $tablet) {
+      line-height: 30px;
+      font-size: 20px;
+      letter-spacing: 2px;
+   }
+
+   @media screen and (min-width: $desktop-large) {
+      line-height: 38px;
+      font-size: 26px;
+      letter-spacing: 2.5px;
+   }
+}

@@ -1,0 +1,25 @@
+.travel {
+   @extend .text-regular;
+   padding:40px 0;
+
+   &--traveller {
+      background:url(../picture/traveller.png) no-repeat center bottom;
+      background-size:contain;
+      height: 900px;
+
+      @media screen and (min-width: $tablet) {
+         height: 1000px;
+      }
+
+      @media screen and (min-width: $desktop-large) {
+         height: 1600px;
+      }     
+   }
+  
+   &__text {
+      &--strong {
+         font-weight: 400;
+         padding-bottom:20px;
+      }
+   }
+}

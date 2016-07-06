@@ -1,0 +1,20 @@
+.liberty {
+   @extend .text-regular;
+   background:url(../picture/liberty.png) no-repeat bottom;
+   background-size: contain;
+   height:750px;
+
+   @media screen and (min-width: $tablet) {
+      height:900px;
+   }
+
+   @media screen and (min-width: $desktop-large) {
+      height: 1350px;
+   }
+
+   strong {
+      display: block;
+      font-weight: 500;
+      padding: 40px 0 20px 0;
+   }
+}

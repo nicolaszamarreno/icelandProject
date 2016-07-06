@@ -1,0 +1,8 @@
+@keyframes bandMove {
+   from {width: 0;}
+   to {width: 100%;}
+}
+
+.bandMove {
+   animation:bandMove 2s;
+}

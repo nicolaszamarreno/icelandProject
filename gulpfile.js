@@ -1,16 +1,12 @@
 'use strict';
 
-// Node module natifs
-var fs = require("fs");
-var path = require("path")
-
 // Load Gulp for execution
 var gulp = require("gulp");
 
 // Compile SASS
 var sass = require("gulp-sass");
 var postcss = require("gulp-postcss");
-var csswring = require("csswring"); // Permet de réunir toutes les propriétés CSS en une 
+var csswring = require("csswring"); 
 var mqpacker = require("css-mqpacker");
 var pxtorem = require("pxtorem");
 var minifyCss = require("gulp-minify-css"); 
@@ -23,7 +19,6 @@ var uglify = require("gulp-uglify");
 
 
 // Others
-var plumber = require("gulp-plumber"); 
 var rename = require("gulp-rename");
 
 // Servers
@@ -32,12 +27,6 @@ var reload = browserSync.reload;
 
 // Inject CSS & JS
 var inject = require("gulp-inject");
-
-// Module for Mailing
-var inlineCss = require("gulp-inline-css");
-
-// Optimisation Images
-var spritesmith = require("gulp-spritesmith"); // Unification de toutes les images utiles en une (icones...)
 
 
 // Variable Environment | wordpress, prod, dist
@@ -62,7 +51,6 @@ var processors = [
 // Compilation du SASS
 gulp.task("sass", function(){
   return gulp.src(prodFolder + 'scss/main.scss')
-  .pipe(plumber())
   .pipe(sourcemaps.init())
   .pipe(sass({ outputStyle: 'expanded' })
               .on('error', sass.logError)
@@ -132,33 +120,6 @@ gulp.task('production', ['sass', 'inject'], function() {
     gulp.watch(prodFolder + "*.html").on('change', browserSync.reload);
     gulp.watch(prodFolder + "js/**/*.js").on('change', browserSync.reload);
 });
-
-// **
-//** Pour LocalHost
-//**
-gulp.task('browserSync', function(){
-  return browserSync.init({
-    proxy:'http://localhost',
-    startPath:"index.php",
-    ghostMode: {
-      scroll: true,
-      links: true,
-      forms: true
-    },
-    watchTask:true
-  });
-});
-
-gulp.task('productionLocal', ['sass', 'inject', 'browserSync'], function() {
-    gulp.watch(prodFolder + "scss/*.scss", ['sass','inject']);
-    gulp.watch(prodFolder + "js/**/*.js", ['inject']);
-    gulp.watch(prodFolder + "*.html", ['inject']);
-    gulp.watch(prodFolder + "*.html").on('change', browserSync.reload);
-    gulp.watch(prodFolder + "js/**/*.js").on('change', browserSync.reload);
-});
-// **
-//** Fin Localhost
-//**
 
 gulp.task('minify-ressources', function () {
   return gulp.src(prodFolder + '*.html')

@@ -1,0 +1,39 @@
+.whyCome {
+   padding-top:50px;
+   line-height: 26px;
+   font-size: 18px;
+   letter-spacing: 2px;
+
+   @media screen and (min-width: $tablet) {
+      padding-top:50px;
+      line-height: 26px;
+      font-size: 18px;
+      letter-spacing: 2px;
+   }
+
+   @media screen and (min-width: $desktop-large) {
+      padding-top:150px;
+      line-height: 38px;
+      font-size: 26px;
+      letter-spacing: 2.5px;
+   }
+
+   &__title {
+      font-weight: 400;
+      border-bottom:1px solid black;
+      padding-bottom:20px;
+      margin-bottom:25px;
+      padding-top:50px;
+
+
+      @media screen and (min-width: $tablet) {
+         padding-bottom:20px;
+         margin-bottom:25px;
+      }
+
+      @media screen and (min-width: $desktop-large) {
+         padding-bottom:40px;
+         margin-bottom:30px;
+      }
+   }
+}

@@ -5,13 +5,12 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
-	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<title>Iceland</title>
 
 	<!-- build:css css/style-min.css -->
-	<!-- inject:css -->
-	<link rel="stylesheet" href="css/style.css">
-	<!-- endinject -->
+		<!-- inject:css -->
+			<link rel="stylesheet" href="css/style.css">
+			<!-- endinject -->
 	<!-- endbuild -->
 
 	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,100,300,500,600,700' rel='stylesheet' type='text/css'>
@@ -24,6 +23,16 @@
 </head>
 
 <body>
+	<nav class="navbar">
+		<ul class="navbar__menu">
+			<li data-scroll="header">Home</li>
+			<li data-scroll="travel--traveller">Discover</li>
+			<li data-scroll="headband">Rando</li>
+			<li data-scroll="liberty">Visit</li>
+			<li data-scroll="whyCome">Knowledge</li>
+		</ul>
+	</nav>
+
 	<header class="header">
 		<div class="container">
 			<h1 class="header__title">
@@ -49,7 +58,7 @@
 	</section>
 
 	<section class="headband">
-		<div class="headband__band"></div>
+		<div class="headband__band wow bandMove"></div>
 		<div class="container">
 			<div class="row headband__baseline">
 				<div class="layout__col--6 layout__colTab--6 headband__intro">
@@ -165,6 +174,16 @@
 		</h6>
 	</footer>
 	</section>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
+	<!-- inject:js -->
+  <script src="js/navbar.js"></script>
+  <script src="js/library/wow.js"></script>
+  <!-- endinject -->
+	<script>
+	   new WOW().init();
+	</script>
 </body>
 
 </html>

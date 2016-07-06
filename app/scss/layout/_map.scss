@@ -1,0 +1,7 @@
+.map {
+   &__text {
+      @extend .text-regular;
+      padding-top:50px;
+      padding-bottom: 50px;
+   }
+}
