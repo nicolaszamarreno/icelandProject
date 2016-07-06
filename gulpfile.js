@@ -91,17 +91,6 @@ gulp.task('compress-css', function() {
     .pipe(gulp.dest('dist/css/'));
 });
 
-gulp.task('mailing', function() {
-    return gulp.src('./*.html')
-        .pipe(inlineCss({
-            applyStyleTags: true,
-            applyLinkTags: true,
-            removeStyleTags: true,
-            removeLinkTags: true
-        }))
-        .pipe(gulp.dest(distFolder));
-});
-
 // Action pour Production
 gulp.task('production', ['sass', 'inject'], function() {
 
