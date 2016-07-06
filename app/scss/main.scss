@@ -3,125 +3,316 @@
 @import "helpers/reset";
 @import "layout/grid";
 @import "layout/header";
+body {
+	width: 100%;
+	overflow: hidden;
+}
+.text-regular {
+	font-weight: 200;
+	line-height: 30px;
+	font-size: 20px;
+	letter-spacing: 0;
+
+	@media screen and (min-width: $tablet) {
+		line-height: 30px;
+		font-size: 20px;
+		letter-spacing: 2px;
+	}
+
+	@media screen and (min-width: $desktop-large) {
+		line-height: 38px;
+		font-size: 26px;
+		letter-spacing: 2.5px;
+	}
+}
 
 .header {
-  background:url(../picture/header.jpg) center no-repeat fixed;
-  background-size:cover;
-  height: 100vh;
-  display: flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  align-content:center;
+	background:url(../picture/header.jpg) center bottom no-repeat fixed;
+	background-size:cover;
+	-webkit-background-size:cover;
+	height: 100vh;
+	display: flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	align-content:center;
 
-  &__title {
-    font-weight: 600;
-    font-size: 110px;
-    text-transform: uppercase;
-    letter-spacing: 12px;
-    text-align: center;
-  }
+	&__title {
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 12px;
+		text-align: center;
 
-  &__baseline {
-    font-size: 35px;
-    text-transform: uppercase;
-    font-weight: 400;
-    padding-top: 10px;
-    text-align: center;
-  }
+		@media screen and (min-width: $tablet) {
+			font-size: 72px;
+		}
+
+		@media screen and (min-width: $desktop-large) {
+			font-size: 110px;
+		}
+	}
+
+	&__baseline {
+		text-transform: uppercase;
+		font-weight: 300;
+		padding-top: 10px;
+		text-align: center;
+
+		@media screen and (min-width: $tablet) {
+			font-size: 30px;
+		}
+
+		@media screen and (min-width: $desktop-large) {
+			font-size: 35px;
+		}
+	}
 }
 
 .travel {
-    padding:50px 0;
-    background:url(../picture/travel.jpg) no-repeat center bottom;
-    background-size:contain;
-    height: 1600px;
-    line-height: 46px;
-    font-weight: 300;
-    font-size: 30px;
-    letter-spacing: 2.5px;
+	@extend .text-regular;
+	padding:40px 0;
+
+	&--traveller {
+		background:url(../picture/traveller.png) no-repeat center bottom;
+		background-size:contain;
+		height: 900px;
+
+		@media screen and (min-width: $tablet) {
+			height: 1000px;
+		}
+
+		@media screen and (min-width: $desktop-large) {
+			height: 1600px;
+		}		
+	}
   
-  &__textStrong {
-    font-weight: 400;
-  }
+	&__text {
+		&--strong {
+			font-weight: 400;
+			padding-bottom:20px;
+		}
+	}
 }
 
 .headband {
-    background-color:#0a1613;
-    color:white;
-    letter-spacing: 2.5px;
-    font-size: 26px;
-    line-height: 34px;
+	@extend .text-regular;
+	background-color:#0a1613;
+	color:white;
 
-    &__baseline {
-      padding: 40px 0 150px 0;
-    }
+	&__baseline {
+		padding:30px 0;
 
-    &__intro {
-      font-weight: 200;
+		div {
+			padding:10px 0;
+		}
 
-      strong {
-        font-weight: 400;
-      }
-    }
+		@media screen and (min-width: $tablet) {
+			padding: 40px 0 150px 0;
 
-    &__indicator {
-      font-weight: 400;
-      font-size: 48px;
-      margin-top: 10px;
-    }
+			div {
+				padding:0;
+			}
+		}
+	}
 
-    span {
-        display: block;
-    }
+	&__intro {
+		font-weight: 200
+
+		strong {
+			font-weight: 400;
+		}
+	}
+
+	&__indicator {
+		font-weight: 400;
+		font-size: 48px;
+		margin-top: 10px;
+	}
+
+	span {
+		display: block;
+	}
+}
+
+.map {
+	&__text {
+		@extend .text-regular;
+		padding-top:50px;
+		padding-bottom: 50px;
+	}
+}
+
+.guid {
+	padding:50px 0;
+	@extend .text-regular;
+
+	&__text {
+
+	}
+
+	strong {
+		font-weight: 400;
+	}
 }
 
 .wild {
-  background:url(../picture/wild.jpg) no-repeat center fixed;
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  letter-spacing: 3px;
-  height: 100vh;
+	background:url(../picture/wild.jpg) no-repeat center fixed;
+	background-size: cover;
+	letter-spacing: 2.5px;
+	height: 400px;
+	display: flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	align-content:center;
 
-  &__quote {
-    font-size: 60px;
-    font-weight: 500;
-  }
+	@media screen and (min-width: $tablet) {
+		height: 400px;
+	}
 
-  &__author {
-    font-size: 46px;
-    margin-top:20px;
-    font-weight: 300;
-  }
+	@media screen and (min-width: $desktop-large) {
+		height: 600px;
+	}
+
+	&__quote {
+		font-weight: 500;
+		font-size: 39px;
+
+		@media screen and (min-width: $tablet) {
+			font-size: 45px;
+		}
+
+		@media screen and (min-width: $desktop-large) {
+			font-size: 60px;
+		}
+	}
+
+	&__author {
+		font-weight: 300;
+		font-size: 26px;
+		margin-top:10px;
+		line-height: 32px;
+
+		@media screen and (min-width: $tablet) {
+			font-size: 30px;
+			margin-top:20px;
+		}
+
+		@media screen and (min-width: $desktop-large) {
+			font-size: 46px;
+			margin-top:20px;
+		}
+	}
 }
 
 .liberty {
-  background:url(../picture/liberty.jpg) no-repeat bottom;
-  background-size: contain;
-  line-height: 46px;
-  height: 1600px;
-  font-weight: 300;
-  font-size: 30px;
-  letter-spacing: 2.5px;
+	@extend .text-regular;
+	background:url(../picture/liberty.png) no-repeat bottom;
+	background-size: contain;
+	height:750px;
 
-  strong {
-    display: block;
-    font-weight: 500;
-    padding: 40px 0 20px 0;
-  }
+	@media screen and (min-width: $tablet) {
+		height:900px;
+	}
+
+	@media screen and (min-width: $desktop-large) {
+		height: 1350px;
+	}
+
+	strong {
+		display: block;
+		font-weight: 500;
+		padding: 40px 0 20px 0;
+	}
 }
 
-.travel_row {
-    padding:50px 0;
-    line-height: 46px;
-    font-weight: 300;
-    font-size: 30px;
-    letter-spacing: 2.5px;
-  
-  &__textStrong {
-    font-weight: 400;
-  }
+.whyCome {
+	padding-top:50px;
+	line-height: 26px;
+	font-size: 18px;
+	letter-spacing: 2px;
+
+	@media screen and (min-width: $tablet) {
+		padding-top:50px;
+		line-height: 26px;
+		font-size: 18px;
+		letter-spacing: 2px;
+	}
+
+	@media screen and (min-width: $desktop-large) {
+		padding-top:150px;
+		line-height: 38px;
+		font-size: 26px;
+		letter-spacing: 2.5px;
+	}
+
+	&__title {
+		font-weight: 400;
+		border-bottom:1px solid black;
+		padding-bottom:20px;
+		margin-bottom:25px;
+		padding-top:50px;
+
+
+		@media screen and (min-width: $tablet) {
+			padding-bottom:20px;
+			margin-bottom:25px;
+		}
+
+		@media screen and (min-width: $desktop-large) {
+			padding-bottom:40px;
+			margin-bottom:30px;
+		}
+	}
+}
+
+.footer {
+	background:url(../picture/bye.jpg) no-repeat bottom;
+	background-size: cover;
+	display: flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	align-content:center;
+	height: 350px;
+
+	@media screen and (min-width: $tablet) {
+		height: 600px;
+	}
+
+	@media screen and (min-width: $desktop-large) {
+		height: 1000px;
+	}
+
+	&__title {
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 12px;
+		text-align: center;
+		font-size:35px;
+		margin-top:10px;
+
+		@media screen and (min-width: $tablet) {
+			font-size: 90px;
+			margin-top:50px;
+		}
+
+		@media screen and (min-width: $desktop-large) {
+			font-size: 110px;
+			margin-top:50px;
+		}
+	}
+
+	&__baseline {
+		font-size: 18px;
+		text-transform: uppercase;
+		font-weight: 300;
+		text-align: center;
+
+		@media screen and (min-width: $tablet) {
+			font-size: 35px;
+		}
+	}
 }
 
 

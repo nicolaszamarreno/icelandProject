@@ -118,7 +118,12 @@ gulp.task('mailing', function() {
 gulp.task('production', ['sass', 'inject'], function() {
 
     browserSync.init({
-        server: prodFolder
+        server: prodFolder,
+        ghostMode: {
+          scroll: true,
+          links: true,
+          forms: true
+        }
     });
 
     gulp.watch(prodFolder + "scss/*.scss", ['sass','inject']);

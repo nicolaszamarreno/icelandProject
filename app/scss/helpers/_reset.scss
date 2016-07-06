@@ -26,7 +26,8 @@ footer, header, hgroup, menu, nav, section {
 body {
   line-height: 1;
   font-family: $font-regular;
-  font-weight: 300;
+  font-weight: 200;
+  background-color:$color-background;
 }
 ol, ul {
   list-style: none;
@@ -43,7 +44,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
+img {
+  width: 100%;
+}
 * {
   box-sizing:border-box;
 }

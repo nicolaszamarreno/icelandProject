@@ -1,6 +1,6 @@
 .container {
-   padding-right: 15px;
-   padding-left: 15px;
+   padding-right: $gutter;
+   padding-left: $gutter;
    margin-right: auto;
    margin-left: auto;
    position: relative;
@@ -10,28 +10,63 @@
       width: 750px;
    }
 
-   @media screen and (min-width: $desktop) {
+   @media screen and (min-width: $desktop-large) {
       width: 1170px;
    }
 }
 
 .row {
     display:flex;
+    flex-direction:column;
+    @media screen and (min-width: $tablet) {
+       flex-direction:row;
+    }
 }
 
 div[class^=layout__col] {
-    padding:0 15px;
-}
 
-@for $i from 1 through 12{
-    .layout__col--#{$i} {
-        position: relative;
-        width: percentage($i/12);
+    @media screen and (min-width: $tablet) {
+       padding-right: $gutter/2;
+       padding-left: $gutter/2;
+    }
+
+    @media screen and (min-width: $desktop) {
+       padding-right: $gutter;
+       padding-left: $gutter;
     }
 }
 
-@for $i from 1 through 12{
-    .layout__colPush--#{$i} {
-        left: percentage($i/12);
-    }
+/*------------------------------------*\
+  Contruct Grid
+\*------------------------------------*/
+
+/*Grid for tablet*/
+@media screen and (min-width: $tablet) {
+  @for $i from 1 through 12{
+      .layout__colTab--#{$i} {
+          position: relative;
+          width: percentage($i/12);
+      }
+  }
+
+  @for $i from 1 through 12{
+      .layout__colPushTab--#{$i} {
+          left: percentage($i/12);
+      }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  @for $i from 1 through 12{
+      .layout__col--#{$i} {
+          position: relative;
+          width: percentage($i/12);
+      }
+  }
+
+  @for $i from 1 through 12{
+      .layout__colPush--#{$i} {
+          left: percentage($i/12);
+      }
+  }
 }
