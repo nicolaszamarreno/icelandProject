@@ -1,4 +1,5 @@
 # Hello ! 
+Ce projet est fictif et concerne l'Islande et son environnement.  
 Le fichier /dist contient le projet optimisé.
 
 ## Quelques commandes :
