@@ -25,10 +25,6 @@
 
       @media screen and (min-width: $tablet) {
          padding: 40px 0 150px 0;
-
-         div {
-            padding:0;
-         }
       }
    }
 
@@ -44,6 +40,16 @@
       font-weight: 400;
       font-size: 48px;
       margin-top: 10px;
+
+      @media screen and (min-width: $tablet) {
+         font-size: 28px;
+         margin-top: 0;
+      }
+
+      @media screen and (min-width: $desktop-large) {
+         font-size: 48px;
+         margin-top: 10px;
+      }
    }
 
    span {

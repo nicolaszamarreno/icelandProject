@@ -28,6 +28,8 @@ var reload = browserSync.reload;
 // Inject CSS & JS
 var inject = require("gulp-inject");
 
+// Compress images
+var imagemin = require('gulp-imagemin');
 
 // Variable Environment | wordpress, prod, dist
 var environment = "prod";
@@ -79,21 +81,20 @@ gulp.task('inject', function () {
 
 // Compress JS
 gulp.task('compress-js', function() {
-  return gulp.src('app/js/**/*.js')
+  return gulp.src('dist/js/*.js')
     .pipe(uglify())
-    .pipe(gulp.dest('dist/js/'));
+    .pipe(gulp.dest('dist/js'));
 });
 
 // Compress CSS
 gulp.task('compress-css', function() {
-  return gulp.src('dist/css/**/*.css')
+  return gulp.src('dist/css/*.css')
     .pipe(minifyCss())
-    .pipe(gulp.dest('dist/css/'));
+    .pipe(gulp.dest('dist/css'));
 });
 
 // Action pour Production
 gulp.task('production', ['sass', 'inject'], function() {
-
     browserSync.init({
         server: prodFolder,
         ghostMode: {
@@ -116,6 +117,14 @@ gulp.task('minify-ressources', function () {
   .pipe(gulp.dest('dist/'));
   console.log('Lancer la tâche "distribution" pour Minify CSS et JS');
 });
+
+gulp.task('minify-images', function(){
+  return gulp.src(prodFolder + 'picture/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('dist/picture'))
+});
+
+gulp.task('minify', ['minify-ressources', 'minify-images']);
 
 
 // Action pour Distribution

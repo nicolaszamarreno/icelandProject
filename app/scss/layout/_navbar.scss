@@ -1,7 +1,7 @@
 .navbar {
    display: none;
 
-   @media screen and (min-width: $desktop-large) {
+   @media screen and (min-width: $tablet) {
       display: block;
       position: fixed;
       transform:rotate(90deg);
@@ -12,10 +12,15 @@
    }
 
    &__menu {
+      transition:all 1s;
       li {
          float: left;
          padding:0 10px;
          cursor: pointer;
+      }
+
+      &--active {
+         color:white;
       }
    }
 }
